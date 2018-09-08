@@ -11,6 +11,7 @@ sap.ui.define([
 				ProductId: oEvent.getSource().getBindingContext().getProperty('PRODUCTID') - 1
 			});
 		},
+		
 		navToCart: function(oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("Cart");
