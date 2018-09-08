@@ -11,7 +11,7 @@ sap.ui.define([
 		 * @memberOf tesoroShoppingCart.view.App
 		 */
 			onInit: function() {
-		
+				alert();
 			},
 
 		/**
