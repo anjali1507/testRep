@@ -1,0 +1,31 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tesoroCart.controller.Checkout"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="My Cart"  showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					
+					<List
+						id="list"
+						mode="Delete"
+						delete="handleDelete"
+						enableBusyIndicator="true"
+						headerText="Products"
+						growing="true"
+						items="{
+							path: '/'
+						}" >
+						<StandardListItem
+							title="Capon - Whole"
+							description="{ProductId}"
+							icon="{ProductPicUrl}"
+							iconDensityAware="false"
+							iconInset="false" />
+					</List>
+
+					
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

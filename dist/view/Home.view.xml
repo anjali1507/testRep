@@ -1,0 +1,35 @@
+<mvc:View controllerName="tesoroCart.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<Page title="{i18n>PRODUCTPAGEHEADER}">
+		<subHeader>
+			<Toolbar>
+				<SearchField></SearchField>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List items="{ path: '/products' }" growing="true" growingScrollToLoad="true">
+				<ObjectListItem title="{PRODUCTNAME}" 
+								intro="{CATEGORY}"
+								number="{PRICE}" 
+								numberUnit="{CURRENCY}" 
+								type="Active" 
+								press="navToDetails">
+					<firstStatus>
+						<ObjectStatus title="Available" text="{AVAILABILITY} Units"></ObjectStatus>
+					</firstStatus>
+					<attributes>
+						<ObjectAttribute text="{DESCRIPTION}"/>
+					</attributes>
+				</ObjectListItem>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://cart" press="navToCart"/>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

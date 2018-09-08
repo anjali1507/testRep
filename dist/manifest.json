@@ -1,0 +1,168 @@
+{
+    "_version": "1.5.0",
+    "sap.app": {
+        "id": "tesoroCart",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "ui5template.basicSAPUI5ApplicationProject",
+            "version": "1.40.12"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "tesoroCart.view.App",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.collaboration": {},
+                "sap.ui.comp": {},
+                "sap.uxap": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "tesoroCart.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "model/MockData.json",
+                "preload": false
+            },
+            "Feed": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "model/feed.json",
+                "preload": false
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "tesoroCart.view",
+                "controlId": "idApp",
+                "controlAggregation": "detailPages",
+                "async": true
+            },
+            "targets": {
+                "Home": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Home",
+                    "controlAggregation": "masterPages",
+                    "title": "Home",
+                    "viewLevel": 1
+                },
+                "Detail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Detail",
+                    "title": "Detail",
+                    "viewLevel": 2,
+                    "controlAggregation": "detailPages"
+                },
+                "Welcome": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Welcome",
+                    "title": "Welcome",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 1
+                },
+                "Checkout": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "Checkout",
+                    "viewLevel": 2
+                }
+            },
+            "routes": [
+                {
+                    "name": "Home",
+                    "pattern": "",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Home",
+                        "Welcome"
+                    ]
+                },
+                {
+                    "name": "Detail",
+                    "pattern": "Detail/{ProductId}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Home",
+                        "Detail"
+                    ]
+                },
+                {
+                    "name": "Cart",
+                    "pattern": "Cart",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Home",
+                        "Checkout"
+                    ]
+                }
+            ]
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "",
+        "_version": "1.1.0"
+    }
+}

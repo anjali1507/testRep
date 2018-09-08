@@ -1,0 +1,57 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tesoroCart.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Product Details" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<ObjectHeader title="{PRODUCTNAME}"
+						number="{ parts:[{path:'PRICE'},{path:'CURRENCY'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+						numberUnit="{CURRENCY}">
+						<statuses>
+							<ObjectStatus text="Some Damaged" state="Error"/>
+							<ObjectStatus text="In Stock" state="Success"/>
+						</statuses>
+						<attributes>
+							<ObjectAttribute text="{WEIGHT} {WEIGHTMEASURE}"/>
+							<ObjectAttribute text="{SUPPLIER}"/>
+							<ObjectAttribute text="{DESCRIPTION}"/>
+							<ObjectAttribute text="www.sap.com" active="true" press="handleLinkObjectAttributePress"/>
+						</attributes>
+					</ObjectHeader>
+					<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+						<items>
+							<IconTabFilter text="Review">
+									<FeedInput
+										post="onPost"
+										showIcon="true"
+										class="sapUiSmallMarginTopBottom" />
+									<List
+										showSeparators="Inner"
+										items="{/EntryCollection}" 
+										id="feedList">
+										<FeedListItem
+											sender="{Author}"
+											senderPress="onSenderPress"
+											iconPress="onIconPress"
+											iconDensityAware="false"
+											info="{Type}"
+											timestamp="{Date}"
+											text="{Text}" />
+									</List>
+							</IconTabFilter>
+							<IconTabFilter text=""></IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+				<footer>
+					<Toolbar>
+						<content>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://add" text="Add to cart" press="selectQuantity"></Button>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

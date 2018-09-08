@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "tesoroCart.Cart",
+        "description": "demo",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#Cart-Display",
+        "navigationComponentName": "tesoroCart",
+        "intentSemanticObject": "Cart",
+        "intentAction": "Display",
+        "html5ApplicationName": "cart",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "f3f9e03d-fa97-4aab-8a02-86e0550ad1a0"
+        ],
+        "contentPackages": [
+            "f7c229c3-bd88-4514-8507-a656d408e505"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Cart",
+        "subtitle": "Shop",
+        "searchKeywords": "Cart,Shop",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

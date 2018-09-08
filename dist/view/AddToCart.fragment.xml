@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Popover 
+		placement="PreferredTopOrFlip"
+    	id="addQuantityDialog"
+    	title="Select Quantity">
+   	<content>
+   		<VBox alignItems="Center" width="10rem">
+   			<items>
+   				<StepInput id="idQuantityStepInput" width="6rem" class="sapUiSmallMarginTopBottom" min="1"/>
+   				<Button text="Add" icon="sap-icon://accept" type="Transparent" press="addToCart"/>
+   			</items>
+   		</VBox>
+   	</content>
+   </Popover>
+</core:FragmentDefinition>
